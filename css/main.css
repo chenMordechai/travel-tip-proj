@@ -76,9 +76,18 @@ button:hover{
 textarea{
     display: none;
 }
+#map{
+    width: 50%;
+}
 
-@media screen and(max-width:740px){
+@media (max-width:740px){
     .container{
         flex-direction: column;
+    }
+    #map{
+        width: 100%;
+    }
+    .weather{
+        width: 100%;
     }
 }

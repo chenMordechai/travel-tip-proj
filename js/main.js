@@ -109,8 +109,8 @@ function copyLocation() {
     var lat = locService.currrCoords.lat
     var lng = locService.currrCoords.lng
     console.log(lat, lng)
-    let elurl = document.querySelector('#url')
     let urltxt = ` https://chenmordechai.github.io/travel-tip-proj/?lat=${lat}&lng=${lng}`
+    let elurl = document.querySelector('#url')
     elurl.innerHTML = urltxt
     elurl.select()
     document.execCommand("copy");

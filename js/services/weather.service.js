@@ -4,7 +4,7 @@ export default {
 
 function getWeather(lat,lng){
     const API_KEY = '556218e5e37cd0ef9c432a295f6b115f';
-    const url = `http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lng}&APPID=`
+    const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lng}&APPID=`
     var prmRes = axios.get(url + API_KEY)
     var prmData= prmRes.then(res =>{
         var name = res.data.name

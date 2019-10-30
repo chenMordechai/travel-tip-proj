@@ -112,7 +112,8 @@ function copyLocation() {
     // https://chenmordechai.github.io/travel-trip/
     // https://www.google.com/maps/place/${gMyPos.lat}+${gMyPos.lng}
     // `github.io/travelTip/index.html?lat=${lat}&lng=${lng}`
-    var urltxt = `github.io/travelTip/index.html?lat=${lat}&lng=${lng}`
+    // https://chenmordechai.github.io/travel-tip-proj/
+    var urltxt = ` https://chenmordechai.github.io/travel-tip-proj/?lat=${lat}&lng=${lng}`
     document.querySelector('#url').innerHTML = urltxt
     url.select()
     document.execCommand("copy");

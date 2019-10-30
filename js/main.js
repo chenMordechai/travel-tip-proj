@@ -109,13 +109,10 @@ function copyLocation() {
     var lat = locService.currrCoords.lat
     var lng = locService.currrCoords.lng
     console.log(lat, lng)
-    // https://chenmordechai.github.io/travel-trip/
-    // https://www.google.com/maps/place/${gMyPos.lat}+${gMyPos.lng}
-    // `github.io/travelTip/index.html?lat=${lat}&lng=${lng}`
-    // https://chenmordechai.github.io/travel-tip-proj/
-    var urltxt = ` https://chenmordechai.github.io/travel-tip-proj/?lat=${lat}&lng=${lng}`
-    document.querySelector('#url').innerHTML = urltxt
-    url.select()
+    let elurl = document.querySelector('#url')
+    let urltxt = ` https://chenmordechai.github.io/travel-tip-proj/?lat=${lat}&lng=${lng}`
+    elurl.innerHTML = urltxt
+    elurl.select()
     document.execCommand("copy");
     alert("Copied the text: " + urltxt);
 }

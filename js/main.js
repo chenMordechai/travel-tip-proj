@@ -1,4 +1,4 @@
-
+console.log('the secend')
 import locService from './services/loc.service.js'
 import mapService from './services/map.service.js'
 import weatherService from './services/weather.service.js'
@@ -17,26 +17,25 @@ window.onload = () => {
     }
     console.log('onload!', latitude, longitude)
     mapService.initMap()
-        .then(
-            locService.getPosition()
-                .then(pos => {
-                    mapService.panTo(pos.coords.latitude, pos.coords.longitude)
-                    mapService.addMarker({
-                        lat: pos.coords.latitude,
-                        lng: pos.coords.longitude
-                    });
-                    locService.currrCoords = {
-                        lat: pos.coords.latitude,
-                        lng: pos.coords.longitude
-                    }
-                    locService.getCityByCoords(pos.coords.latitude, pos.coords.longitude)
-                        .then(renderCityName)
+        .then(() => locService.getPosition())
+        .then(pos => {
+            mapService.panTo(pos.coords.latitude, pos.coords.longitude)
+            mapService.addMarker({
+                lat: pos.coords.latitude,
+                lng: pos.coords.longitude
+            });
+            locService.currrCoords = {
+                lat: pos.coords.latitude,
+                lng: pos.coords.longitude
+            }
+            locService.getCityByCoords(pos.coords.latitude, pos.coords.longitude)
+                .then(renderCityName)
 
-                    weatherService.getWeather(pos.coords.latitude, pos.coords.longitude)
-                        .then(renderWeather)
-                })
+            weatherService.getWeather(pos.coords.latitude, pos.coords.longitude)
+                .then(renderWeather)
+        })
 
-        )
+
 }
 
 // document.querySelector('.btn1').onclick =  () => {
